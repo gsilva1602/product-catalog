@@ -1,5 +1,7 @@
 import json
 
+catalogo_produtos = {}
+
 def pergunta():
     return input("\nPressione <I> para Inserir\n"+
           "Pressione <E> para Editar\n"+
@@ -28,9 +30,9 @@ def editar(dicionario):
                             float(input("Preco.....: R$")),
                             int(input("Estoque...: "))]
                             
-        return print(f"O produto {chave} foi atualizado!")
+        return print(f"\nO produto {chave} foi atualizado!")
     else:
-        return print("Produto não cadastrado!\n")
+        return print("\nProduto não cadastrado!")
     
 
 def pesquisar(dicionario):
@@ -59,17 +61,19 @@ def mostrar(dicionario):
 def excluir(dicionario):
     chave = input("Digite o produto que deseja excluir: ").upper()
     if chave in dicionario:
-        if input("Tem certeza? S-sim ou N-não\n").upper() == "S":
+        if input("Tem certeza?\nS-sim ou N-não\n").upper() == "S":
             dicionario.pop(chave)
-            return print("Produto removido com sucesso!\n")
+            return print("\nProduto removido com sucesso!")
         else:
-            return print("Operação cancelada")
+            return print("\nOperação cancelada")
+    else:
+        return print("\nEsse produto não está cadastrado.")
         
 
 def esvaziar(dicionario):
     if input("Tem certeza?\nS-sim | N-nao\n").upper() == "S":
         dicionario.clear()
-        return print("Lista limpa com sucesso!")
+        return print("Lista limpa com sucesso!\n")
     else:
         return print("Operacao cancelada")
 
@@ -85,6 +89,7 @@ def carregar_catalogo(catalogoProducts):
         return json.load(arquivo)
 
 run = True
+
 catalogo_carregado = carregar_catalogo('catalogo.json')
 
 while run :
