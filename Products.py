@@ -10,15 +10,16 @@ def pergunta():
     
 
 def inserir(dicionario):
-    dicionario[input("Produto...: ").upper()] = [input("\nNome......: ").upper(),
-                                                                    float(input("Preco.....: R$")),
-                                                                    int(input("Estoque...: "))]
-    
-    if input in dicionario:
-        return print(f"{input} já está cadastrado.")
+    chave = input("\nProduto...: ").upper()
+    if chave in dicionario:
+        return print("\nProduto já existente no catálogo.")
     else:
+        dicionario[chave.upper()] = [input("Nome......: ").upper(),
+                                    float(input("Preco.....: R$")),
+                                    int(input("Estoque...: "))]
+        
         return print("\nProduto adicionado!")
-
+        
 
 def editar(dicionario):
     chave = input("Digite o produto a ser editado: ").upper()
@@ -75,8 +76,8 @@ def esvaziar(dicionario):
 
 def salvar_catalogo(dicionario, catalogoProducts):
     with open(catalogoProducts, "w") as arquivo:
-        json.dump(dicionario, arquivo)
-    return print("Salvo no banco de dados")
+        json.dump(dicionario, arquivo, indent=2, sort_keys=True)
+    return print("Banco de dados atualizado!")
 
 
 def carregar_catalogo(catalogoProducts):
