@@ -1,0 +1,27 @@
+{
+    "A": {
+        "product": "LARANJA",
+        "price": 1.4,
+        "stock": 20
+    },
+    "B": {
+        "product": "LIMAO", 
+        "price": 1.2,
+        "stock": 45
+    },
+    "C": {
+        "product": "LARANJA", 
+        "price": 1,
+        "stock": 50
+    },
+    "E": {
+        "product":"PAO", 
+        "price": 0.75,
+        "stock": 50
+    },
+    "D": {
+        "product":"BANANA",
+        "price": 2,
+        "stock": 30
+    }
+}
