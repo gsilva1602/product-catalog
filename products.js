@@ -21,7 +21,7 @@ if(containsCatalogo.includes(typedProductCatalogo)) {
 }
 
 // if not equal as stored, this is needed:
-containsCatalogo.forEach(element => {
+containsCatalogo.forEach(element => { // the forEach access each element and read it.
     const containsCatalogoToLowerCase = element.toString().toLowerCase()
     if(containsCatalogoToLowerCase === typedProductCatalogo.toLowerCase()) {
         console.log('equal Catalogo not the same stored');
