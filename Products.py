@@ -1,7 +1,5 @@
 import json
 
-catalogo_produtos = {}
-
 def pergunta():
     return input("\nPressione <I> para Inserir\n"+
           "Pressione <E> para Editar\n"+
